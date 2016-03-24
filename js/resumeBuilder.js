@@ -201,6 +201,21 @@ var education = {
 		"url" : "http://www.syr.edu/"
 
 	}
+	],
+
+	"onlineCourses" : [
+	{
+		"title" : "Front End Developer",
+		"school" : "Udacity",
+		"date" : "2016",
+		"url" : "https://www.udacity.com/"
+	},
+	{
+		"title" : "UX Design",
+		"school" : "DesignLab",
+		"date" : "2016",
+		"url" : "http://trydesignlab.com/"
+	}	
 	]
 };
 
@@ -225,10 +240,35 @@ for (school in education.schools) {
 
 	$(".education-entry:last a").attr("href", education.schools[school].url);
 
+	};
+
+/*
+Adds a new div class to education for online classes and also displays the header
+*/
+var HTMLonlineStart = $("<div class = 'online-entry'</div>");
+$("#education").append(HTMLonlineClasses);
+
+/*
+To display online course details
+*/
+for (onlineCourse in education.onlineCourses) {
+	$("#education").append(HTMLonlineStart);
+
+	var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[onlineCourse].title);
+	var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineCourse].school);
+	var formattedTitleSchool = formattedTitle + formattedSchool;
+		$(".online-entry:last").append(formattedTitleSchool);
+
+	var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[onlineCourse].date);
+		$(".online-entry:last").append(formattedDates);
+
+	var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourses[onlineCourse].url);
+		$(".online-entry:last").append(formattedURL);
 	}
 }
 
 displayEducation();
+
 
 /*
 Code for location map
