@@ -11,7 +11,7 @@ h5,
 h6 {
   padding:0;
   margin:0;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Hind", sans-serif;
 }
 
 .clear-fix {
@@ -26,6 +26,7 @@ h6 {
 }
 
 h1 {
+  font-family: "Montserrat", sans-serif;
   font-size: 40px;
   color: #e7803d;
   line-height: 48px;
@@ -33,6 +34,7 @@ h1 {
 }
 
 h2 {
+  font-family: "Montserrat", sans-serif;
   font-weight: bold;
   font-size: 24px;
   color: #585253;
@@ -41,7 +43,7 @@ h2 {
 }
 
 h3 {
-  font-style: italic;
+  /*font-style: italic;*/
   font-size: 20px;
   color: #000;
   line-height: 22px;
@@ -93,15 +95,16 @@ a {
   display: block;
 }
 
-.welcome-message {
- /* font-style: italic;*/
+/*.welcome-message {
+ font-style: italic;
   font-size: 16px;
-  color: #f3f3f3;
+  color: #585253;
   line-height: 20px;
 }
+*/
 
 #skills-h3 {
-  color: #e7803d;
+  color: #585253;
   display: none;
 }
 

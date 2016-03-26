@@ -1,3 +1,6 @@
+
+
+
 /*
 Bio Section, including Header and Top Contacts
  */
@@ -19,8 +22,8 @@ var bio = {
 
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
+$("#bsRole").prepend(formattedRole);
+$("#bsName").prepend(formattedName);
 
 var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 $("#topContacts").append(formattedMobile);
@@ -34,26 +37,31 @@ var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 $("#topContacts").append(formattedLocation);
 
 
+/* Move bio pic and message to right column, below education
+*/
 var formattedPic = HTMLbioPic.replace("%data%", bio.bioPic);
-$("#header").append(formattedPic);
+// $("#header").append(formattedPic);
+	$(formattedPic).insertBefore("#education");
 var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.message);
-$("#header").append(formattedMessage);
+	// $("#header").append(formattedMessage);
+	$(formattedMessage).insertBefore("#education");
+
 
 
 if (bio.skills.length > 0) {
-	$("#header").append(HTMLskillsStart);
+	$("#bsSkills").append(HTMLskillsStart);
 
 var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-$("#header").append(formattedSkill);
+$("#skills").append(formattedSkill);
 
 formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-$("#header").append(formattedSkill);
+$("#skills").append(formattedSkill);
 
 formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-$("#header").append(formattedSkill);
+$("#skills").append(formattedSkill);
 
 formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
-$("#header").append(formattedSkill);
+$("#skills").append(formattedSkill);
 }
 
 /*
