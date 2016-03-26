@@ -3,7 +3,6 @@ div,
 ul,
 li,
 p,
-h1,
 h2,
 h3,
 h4,
@@ -11,7 +10,7 @@ h5,
 h6 {
   padding:0;
   margin:0;
-  font-family: "Hind", sans-serif;
+  font-family: 'Hind', sans-serif;
 }
 
 .clear-fix {
@@ -26,15 +25,17 @@ h6 {
 }
 
 h1 {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 40px;
   color: #e7803d;
   line-height: 48px;
+  padding: 0;
+  margin: 0;
   display: inline;
 }
 
 h2 {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-size: 24px;
   color: #585253;
@@ -50,9 +51,10 @@ h3 {
 }
 
 h4 {
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-size: 14px;
-  color: #4a4a4a;
+  color: #fff;
   line-height: 17px;
 }
 
