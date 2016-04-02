@@ -12,11 +12,11 @@ var bio = {
 		"mobile" : "206-953-2971",
 		"email" : "sambritney@gmail.com",
 		"twitter" : "@sambritney",
-		"github" : "sambritney",
+		// "github" : "sambritney",
 		"location" : "Carlsbad, CA"
 	},
 	"message" : "UX professional with global expertise in Product and Marketing.",
-	"skills" : ["User Experience Design", "Product Management", "Agile Methodologies", "HTML, CSS"],
+	"skills" : ["User Experience Design", "Product Management", "Agile Methodologies", "HTML, CSS, JavaScript"],
 	"bioPic" : "images/sam-146.jpg"
 };
 
@@ -31,8 +31,8 @@ var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
 $("#topContacts").append(formattedEmail);
 var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
 $("#topContacts").append(formattedTwitter);
-var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-$("#topContacts").append(formattedGithub);
+// var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+// $("#topContacts").append(formattedGithub);
 var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 $("#topContacts").append(formattedLocation);
 
@@ -49,7 +49,7 @@ var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.message);
 
 
 if (bio.skills.length > 0) {
-	$("#bsSkills").append(HTMLskillsStart);
+	$(HTMLskillsStart).insertAfter("#education");
 
 var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
 $("#skills").append(formattedSkill);
@@ -156,11 +156,12 @@ var projects = {
 			"title" : "Placeholder for a Project",
 			"dates" : "TBD",
 			"description" : "This is a placeholder for where a project will go",
-			"images" : ["images/comb1_d.png", "images/comb3.png"]
+			"images" : ["images/comb1_d.png"]
 	}
 	]
 };
 
+/*
 projects.display = function () {
 	for (project in projects.projects) {
 	$("#projects").append(HTMLprojectStart);
@@ -185,6 +186,8 @@ projects.display = function () {
 }
 
 projects.display();
+*/
+
 
 /*
 Education Section
@@ -216,7 +219,7 @@ var education = {
 		"title" : "Front End Developer",
 		"school" : "Udacity",
 		"date" : "2016",
-		"url" : "https://www.udacity.com/"
+		"url" : "http://www.udacity.com/"
 	},
 	{
 		"title" : "UX Design",
@@ -250,15 +253,10 @@ for (school in education.schools) {
 
 	};
 
-/*
-Adds a new div class to education for online classes and also displays the header
-*/
-var HTMLonlineStart = $("<div class = 'online-entry'</div>");
-$("#education").append(HTMLonlineClasses);
 
 /*
 To display online course details
-*/
+
 for (onlineCourse in education.onlineCourses) {
 	$("#education").append(HTMLonlineStart);
 
@@ -270,9 +268,9 @@ for (onlineCourse in education.onlineCourses) {
 	var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[onlineCourse].date);
 		$(".online-entry:last").append(formattedDates);
 
-	var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourses[onlineCourse].url);
-		$(".online-entry:last").append(formattedURL);
-	}
+	$(".online-entry:last a").attr("href", education.onlineCourses[onlineCourse].url);
+
+	}*/
 }
 
 displayEducation();

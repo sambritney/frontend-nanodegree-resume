@@ -97,13 +97,17 @@ a {
   display: block;
 }
 
-/*.welcome-message {
- font-style: italic;
+.welcome-message {
+  padding: 5%;
+ /*font-style: italic;
   font-size: 16px;
   color: #585253;
-  line-height: 20px;
+  line-height: 20px;*/
 }
-*/
+
+.edu-section {
+  padding: 5% 0;
+}
 
 #skills-h3 {
   color: #585253;
@@ -143,7 +147,7 @@ a {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  /*justify-content: space-around;*/
   padding: 10px;
 }
 
@@ -185,6 +189,9 @@ span {
 @media only screen and (max-width:900px) {
   .biopic {
     width: 175px;
+  }
+  #timeline {
+    display: none;
   }
 }
 
