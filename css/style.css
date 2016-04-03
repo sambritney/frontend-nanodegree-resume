@@ -10,8 +10,8 @@ h5,
 h6 {
   padding:0;
   margin:0;
-  font-family: 'Hind', sans-serif;
 }
+
 
 .clear-fix {
   overflow: auto;
@@ -26,7 +26,7 @@ h6 {
 
 h1 {
   font-family: 'Montserrat', sans-serif;
-  font-size: 40px;
+  font-size: 44px;
   color: #e7803d;
   line-height: 48px;
   padding: 0;
@@ -53,8 +53,8 @@ h3 {
 h4 {
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
-  font-size: 14px;
-  color: #fff;
+  font-size: 16px;
+  color: #585253;
   line-height: 17px;
 }
 
@@ -91,7 +91,7 @@ p {
 }
 
 a {
-  color: #1199c3;
+  color: #e7803d;
   text-decoration: none;
   margin-top: 10px;
   display: block;
@@ -99,10 +99,6 @@ a {
 
 .welcome-message {
   padding: 5%;
- /*font-style: italic;
-  font-size: 16px;
-  color: #585253;
-  line-height: 20px;*/
 }
 
 .edu-section {
@@ -123,7 +119,6 @@ a {
 }
 
 .white-text {
-  /*font-weight: bold;*/
   color: #fff;
 }
 
@@ -134,12 +129,11 @@ a {
 }
 
 .dark-gray {
-  background-color: #4a4a4a;
+  background-color: #585253;
 }
 
-/* TODO: Replace with image later */
 #header {
-  background-color: #585253;
+  background-image: url('../images/background.png');
 }
 
 .flex-box {
@@ -147,7 +141,6 @@ a {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  /*justify-content: space-around;*/
   padding: 10px;
 }
 

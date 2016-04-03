@@ -12,7 +12,6 @@ var bio = {
 		"mobile" : "206-953-2971",
 		"email" : "sambritney@gmail.com",
 		"twitter" : "@sambritney",
-		// "github" : "sambritney",
 		"location" : "Carlsbad, CA"
 	},
 	"message" : "UX professional with global expertise in Product and Marketing.",
@@ -26,24 +25,20 @@ $("#bsRole").prepend(formattedRole);
 $("#bsName").prepend(formattedName);
 
 var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-$("#topContacts").append(formattedMobile);
+$("#topContacts, #footerContacts").append(formattedMobile);
 var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-$("#topContacts").append(formattedEmail);
+$("#topContacts, #footerContacts").append(formattedEmail);
 var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-$("#topContacts").append(formattedTwitter);
-// var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-// $("#topContacts").append(formattedGithub);
+$("#topContacts, #footerContacts").append(formattedTwitter);
 var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-$("#topContacts").append(formattedLocation);
+$("#topContacts, #footerContacts").append(formattedLocation);
 
 
 /* Move bio pic and message to right column, below education
 */
 var formattedPic = HTMLbioPic.replace("%data%", bio.bioPic);
-// $("#header").append(formattedPic);
 	$(formattedPic).insertBefore("#education");
 var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.message);
-	// $("#header").append(formattedMessage);
 	$(formattedMessage).insertBefore("#education");
 
 
