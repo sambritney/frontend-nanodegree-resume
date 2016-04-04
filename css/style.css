@@ -136,6 +136,11 @@ a {
   background-image: url('../images/background.png');
 }
 
+#topContacts,
+#footerContacts {
+  justify-content: space-around;
+}
+
 .flex-box {
   display: -webkit-flex;
   display: flex;

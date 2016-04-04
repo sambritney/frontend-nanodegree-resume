@@ -16,48 +16,47 @@ var bio = {
 	},
 	"message" : "UX professional with global expertise in Product and Marketing.",
 	"skills" : ["User Experience Design", "Product Management", "Agile Methodologies", "HTML, CSS, JavaScript"],
-	"bioPic" : "images/sam-146.jpg"
+	"biopic" : "images/sam-146.jpg"
 };
 
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
-var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-$("#bsRole").prepend(formattedRole);
-$("#bsName").prepend(formattedName);
+bio.display = function () {
+	
+	var formattedName = HTMLheaderName.replace("%data%", bio.name);
+	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+	$("#bsRole").prepend(formattedRole);
+	$("#bsName").prepend(formattedName);
 
-var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-$("#topContacts, #footerContacts").append(formattedMobile);
-var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-$("#topContacts, #footerContacts").append(formattedEmail);
-var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-$("#topContacts, #footerContacts").append(formattedTwitter);
-var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-$("#topContacts, #footerContacts").append(formattedLocation);
-
-
-/* Move bio pic and message to right column, below education
-*/
-var formattedPic = HTMLbioPic.replace("%data%", bio.bioPic);
-	$(formattedPic).insertBefore("#education");
-var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.message);
-	$(formattedMessage).insertBefore("#education");
+	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+	$("#topContacts, #footerContacts").append(formattedMobile);
+	var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+	$("#topContacts, #footerContacts").append(formattedEmail);
+	var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+	$("#topContacts, #footerContacts").append(formattedTwitter);
+	var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+	$("#topContacts, #footerContacts").append(formattedLocation);
 
 
+	/* Move bio pic and message to right column, below education
+	*/
+	var formattedPic = HTMLbiopic.replace("%data%", bio.biopic);
+		$(formattedPic).insertBefore("#education");
+	var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.message);
+		$(formattedMessage).insertBefore("#education");
 
-if (bio.skills.length > 0) {
-	$(HTMLskillsStart).insertAfter("#education");
 
-var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-$("#skills").append(formattedSkill);
+	if (bio.skills.length > 0) {
+		$(HTMLskillsStart).insertAfter("#education");
 
-formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-$("#skills").append(formattedSkill);
+		for(var i = 0; i < bio.skills.length; i++) {
+			var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
+			$("#skills").append(formattedSkill);
+		}
 
-formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-$("#skills").append(formattedSkill);
-
-formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
-$("#skills").append(formattedSkill);
+	}
 }
+
+bio.display();
+
 
 /*
 Work Section, listing all jobs
@@ -116,7 +115,7 @@ var work = {
 	]
 };
 
-function displayWork() {
+work.display = function() {
 for (job in work.jobs) {
 	$("#workExperience").append(HTMLworkStart);
 
@@ -139,7 +138,7 @@ for (job in work.jobs) {
 	}
 }
 
-displayWork();
+work.display();
 
 /*
 Projects section. Placeholder for now until I have projects to share.
@@ -148,16 +147,22 @@ Projects section. Placeholder for now until I have projects to share.
 var projects = {
 	"projects" : [
 	{
-			"title" : "Placeholder for a Project",
-			"dates" : "TBD",
-			"description" : "This is a placeholder for where a project will go",
-			"images" : ["images/comb1_d.png"]
+			"title" : "Portfolio Site",
+			"dates" : "December 2015",
+			"description" : "Developed personal portfolio site",
+			"images" : ["images/comb_folio.png", "images/comb_code.png"]
+	},
+	{
+			"title" : "Persona Development",
+			"dates" : "February 2016",
+			"description" : "Persona research and development for Good Market",
+			"images" : ["images/comb_ex.png"]	
 	}
 	]
 };
 
-/*
-projects.display = function () {
+
+projects.display = function() {
 	for (project in projects.projects) {
 	$("#projects").append(HTMLprojectStart);
 
@@ -181,7 +186,7 @@ projects.display = function () {
 }
 
 projects.display();
-*/
+
 
 
 /*
@@ -225,7 +230,7 @@ var education = {
 	]
 };
 
-function displayEducation() {
+education.display = function() {
 for (school in education.schools) {
 	$("#education").append(HTMLschoolStart);
 	
@@ -249,8 +254,7 @@ for (school in education.schools) {
 	};
 
 
-/*
-To display online course details
+// To display online course details
 
 for (onlineCourse in education.onlineCourses) {
 	$("#education").append(HTMLonlineStart);
@@ -265,10 +269,10 @@ for (onlineCourse in education.onlineCourses) {
 
 	$(".online-entry:last a").attr("href", education.onlineCourses[onlineCourse].url);
 
-	}*/
+	}
 }
 
-displayEducation();
+education.display();
 
 
 /*
@@ -288,22 +292,6 @@ $(document).click(function(loc) {
   logClicks(x,y);
 });
 
-/*
-Code for the Internationalizer - currently not used
-*/
-
-/*Internationalizer*/
-// function inName(name) {
-// 	name = bio.name.trim().split(" ");
-// 	console.log(name);
-// 	name[1] = name[1].toUpperCase();
-// 	name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
-
-// 	return name[0] + " " + name[1];
-// }
-
-
-// $("#main").append(internationalizeButton);
 
 
 
